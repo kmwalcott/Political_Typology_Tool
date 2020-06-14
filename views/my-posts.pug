@@ -1,0 +1,22 @@
+extends my-dashboard 
+
+block unique-content
+    form(action="http://localhost:5000/auth/signout?_method=DELETE", method="POST" class="form-centered")
+        input(type="submit" value="Sign Out" class="button") 
+    h2(class="page-title-center") My Posts
+    div#wrapper1 
+            each post in all_posts
+                    - var my_id = post._id
+                    -var flagged_string = ""
+                    -var my_display = ""
+                    - var content_length = post.content.split(' ').length;
+                    -if(post.flagged){flagged_string="Yes"} else{flagged_string="No"}
+                    -if(post.video==""){my_display="none"} else{my_display="inline"}
+                    div(id=`${my_id}` class="post" data-username=`${post.user}`) 
+                        p(style="display:none")=' '+post.politician+' '+post.state+' '+post.level+' '+post.question+' '+post.stance+' '+post.party+' '+content_length+' '+post.content+' '
+                        iframe(width=512 height=330 class=my_display src=post.video allowfullscreen='allowfullscreen' frameborder=0)    
+                        p= post.content  
+                        p= '('+post.politician+', ' +post.level+' politician from '+post.state+', ' +post.party+')'
+                        small= 'Upvotes:'+post.upvotes+' Flagged:'+flagged_string+' User:'+post.user
+                        button.edit-button.button= 'Edit'
+                        button.delete-button.button= 'Delete'        

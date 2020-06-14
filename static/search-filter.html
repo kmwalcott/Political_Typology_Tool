@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="http://localhost:5000/auth/register">Register</a></li>
+            <li><a href="http://localhost:5000/auth/signin">Sign In</a></li>
+            <li><a href="search-filter.html">Search Database</a></li>
+            <li><a href="http://localhost:5000/quiz">Quiz</a></li>
+            <li><a href="http://localhost:5000/my-dashboard/my-posts">Manage Posts</a>
+                <ul>
+                    <li><a href="http://localhost:5000/my-dashboard/new-post">New Post</a></li>
+                    <li><a href="http://localhost:5000/my-dashboard/my-posts">My Posts</a></li>
+                    <li><a href="http://localhost:5000/my-dashboard/upvoted-posts">Upvoted Posts</a></li>
+                    <li><a href="http://localhost:5000/my-dashboard/flagged-posts">Flagged Posts</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
+    <div class="clr"></div>
+    <h1 class="page-title-center">Search Database</h1>
+    <form action='http://localhost:5000/posts/search' method='POST' class="form-centered">
+        <div>
+        <label for="search_by">Search by:</label>
+        <input type="radio" value="Question" name="search_by" id="search_by">Question
+        <input type="radio" value="Politician" name="search_by">Politician's Name <br>  
+       </div>
+       <label for="question">Question: </label> 
+       <select name="question" id="question">
+            <option value="">--Select question--</option>
+            <option value="question1">Are tax increases acceptable as part of a deal to reduce the national debt?</option>
+            <option value="question2">Should states require a license to practice medicine?</option>
+            <option value="question3">Should marijuana be legal?</option>
+        </select>
+        <br>
+        <label for="party">Party: </label>
+        <select name="party" id="party">
+            <option value="">--Choose a party--</option>
+            <option value="Republican">Republican</option>
+            <option value="Democrat">Democrat</option>
+            <option value="Libertarian">Libertarian</option>
+            <option value="Green">Green</option>
+            <option value="Independent">Independent</option>
+            <option value="Other">Other</option>
+        </select>
+        <label for="state">State: </label> 
+        <select name="state" id="state">
+            <option value="">--Choose a state</option>
+            <option value="Alabama" >Alabama</option>
+            <option value="Alaska" >Alaska</option>
+            <option value="Arizona" >Arizona</option>
+            <option value="Arkansas" >Arkansas</option>
+            <option value="California" >California</option>
+            <option value="Colorado" >Colorado</option>
+            <option value="Connecticut" >Connecticut</option>
+            <option value="Delaware" >Delaware</option>
+            <option value="Florida" >Florida</option>
+            <option value="Georgia" >Georgia</option>
+            <option value="Hawaii" >Hawaii</option>
+            <option value="Idaho" >Idaho</option>
+            <option value="Illinois" >Illinois</option>
+            <option value="Indiana" >Indiana</option>
+            <option value="Iowa" >Iowa</option>
+            <option value="Kansas" >Kansas</option>
+            <option value="Kentucky" >Kentucky</option>
+            <option value="Louisiana" >Louisiana</option>
+            <option value="Maine" >Maine</option>
+            <option value="Maryland" >Maryland</option>
+            <option value="Massachusetts" >Massachusetts</option>
+            <option value="Michigan" >Michigan</option>
+            <option value="Minnesota" >Minnesota</option>
+            <option value="Mississippi" >Mississippi</option>
+            <option value="Missouri" >Missouri</option>
+            <option value="Montana" >Montana</option>
+            <option value="Nebraska" >Nebraska</option>
+            <option value="Nevada" >Nevada</option>
+            <option value="New Hampshire" >New Hampshire</option>
+            <option value="New Jersey" >New Jersey</option>
+            <option value="New Mexico" >New Mexico</option>
+            <option value="New York" >New York</option>
+            <option value="North Carolina" >North Carolina</option>
+            <option value="North Dakota" >North Dakota</option>
+            <option value="Ohio" >Ohio</option>
+            <option value="Oklahoma" >Oklahoma</option>
+            <option value="Oregon">Oregon</option>
+            <option value="Pennsylvania" >Pennsylvania</option>
+            <option value="Rhode Island" >Rhode Island</option>
+            <option value="South Carolina" >South Carolina</option>
+            <option value="South Dakota" >South Dakota</option>
+            <option value="Tennessee" >Tennessee</option>
+            <option value="Texas" >Texas</option>
+            <option value="Utah">Utah</option>
+            <option value="Vermont" >Vermont</option>
+            <option value="Virginia">Virginia</option>
+            <option value="Washington">Washington</option>
+            <option value="West Virginia" >West Virginia</option>
+            <option value="Wisconsin" >Wisconsin</option>
+            <option value="Wyoming">Wyoming</option>
+        </select>
+        <br>
+        <label for="level">Level of Government: </label> 
+        <select name="level" id="level">
+            <option value="">--Choose level of government--</option>
+            <option value="Local">Local</option>
+            <option value="State">State</option>
+            <option value="Federal">Federal</option>
+        </select>
+        <br>
+        <label for="politician">Politician's Name: </label>
+        <input type = "text" name="politician" id="politician">
+        <br>
+        <input type="submit" value="Apply Filter" class="button">
+    </form>
+
+    <!--
+    <script>
+        document.querySelector('#dashboard-link').addEventListener('click', function(e){
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt3YWxjb3R0IiwiaWF0IjoxNTg0Mjg5OTk0fQ.Uophg7oFa_WQxrsG9l5S1wJ7TpD57pbf6jLiCF0etok";
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '/my-dashboard', true);
+        xhr.withCredentials = true;
+        //xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("Authentication", `Bearer ${token}`);
+        xhr.onload = function(){
+            if (this.status == 200){
+                console.log('On the way to my-dashboad!');
+            }
+        }
+        xhr.send(null);
+        })
+    </script>
+    -->
+</body>
+</html>

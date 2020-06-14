@@ -1,0 +1,65 @@
+doctype html
+html
+    head
+        base(href="/")
+        link(href="stylesheet.css" rel="stylesheet" type="text/css")
+    body
+        nav
+            ul     
+                li       
+                    a(href="index.html") Home   
+                li 
+                    a(href="http://localhost:5000/auth/register") Register
+                li 
+                    a(href="http://localhost:5000/auth/signin") Sign In
+                li 
+                    a(href="search-filter.html") Search Database
+                li 
+                    a(href="http://localhost:5000/quiz") Quiz
+                li 
+                    a(href="http://localhost:5000/my-dashboard/my-posts") Manage Posts
+                    ul 
+                        li 
+                            a(href="http://localhost:5000/my-dashboard/my-posts") My Posts   
+                        li 
+                            a(href="http://localhost:5000/my-dashboard/upvoted-posts") Upvoted Posts  
+                        li 
+                            a(href="http://localhost:5000/my-dashboard/flagged-posts") Flagged Posts 
+                        li 
+                            a(href="http://localhost:5000/my-dashboard/new-post") New Post           
+        div.clr
+        h1(class="page-title-center") Libertarian Position
+        div#search-results
+            div#lib-wrapper 
+                each post in lib_posts
+                    - var my_id = post._id
+                    -var flagged_string = ""
+                    -var my_display = ""
+                    -var my_display2 = ""
+                    -if(post.flagged){flagged_string="Yes"; my_display2="none"} else{flagged_string="No"; my_display2="inline-block"}
+                    -if(post.video==""){my_display="none"} else{my_display="inline"}
+                    div(id=`${my_id}` class="post" data-username=`${post.user}`) 
+                        iframe(width=512 height=330 class=my_display src=post.video allowfullscreen='allowfullscreen' frameborder=0)    
+                        p= post.content  
+                        p= '('+post.politician+', ' +post.level+' politician from '+post.state+', ' +post.party+')'
+                        small= 'Upvotes:'+post.upvotes+' Flagged:'+flagged_string+' User:'+post.user
+                        button.upvote-button.button= 'Upvote'
+                        button(class="flag-button" class="button" class=my_display2)= 'Flag'        
+            h1(class="page-title-center") Interventionist Position
+            div#int-wrapper 
+                each post in int_posts
+                    - var my_id = post._id
+                    -var flagged_string = ""
+                    -var my_display = ""
+                    -var my_display2 = ""
+                    -if(post.flagged){flagged_string="Yes"; my_display2="none"} else{flagged_string="No"; my_display2="inline-block"}
+                    -if(post.video==""){my_display="none"} else{my_display="inline"}
+                    div(id=`${my_id}` class="post" data-username=`${post.user}`) 
+                        iframe(width=512 height=330 class=my_display src=post.video allowfullscreen='allowfullscreen' frameborder=0)    
+                        p= post.content
+                        p= '('+post.politician+', ' +post.level+' politician from '+post.state+', ' +post.party+')'
+                        small= 'Upvotes:'+post.upvotes+' Flagged:'+flagged_string+' User:'+post.user
+                        button.upvote-button.button= 'Upvote'
+                        button(class="flag-button" class="button" class=my_display2)= 'Flag'  
+                         
+    script(src="search.js")

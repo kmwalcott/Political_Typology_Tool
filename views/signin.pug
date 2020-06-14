@@ -1,0 +1,46 @@
+doctype html
+html
+    head
+        base(href="/")
+        link(href="stylesheet.css" rel="stylesheet" type="text/css")
+    body
+        nav
+            ul     
+                li       
+                    a(href="index.html") Home   
+                li 
+                    a(href="http://localhost:5000/auth/register") Register
+                li 
+                    a(href="http://localhost:5000/auth/signin") Sign In
+                li 
+                    a(href="search-filter.html") Search Database
+                li 
+                    a(href="http://localhost:5000/quiz") Quiz
+                li 
+                    a(href="http://localhost:5000/my-dashboard/my-posts") Manage Posts
+                    ul 
+                        li 
+                            a(href="http://localhost:5000/my-dashboard/new-post") New Post
+                        li 
+                            a(href="http://localhost:5000/my-dashboard/my-posts") My Posts   
+                        li 
+                            a(href="http://localhost:5000/my-dashboard/upvoted-posts") Upvoted Posts  
+                        li 
+                            a(href="http://localhost:5000/my-dashboard/flagged-posts") Flagged Posts      
+        div.clr
+        h1(class="page-title-left") Sign In
+        -var error_message = ''
+        -if(messages.error){error_message = messages.error}
+        h2=error_message
+        form(action="http://localhost:5000/auth/signin", method="POST")
+            label(for="username") Username: 
+            input(type="text" name="username" id="username")
+            br
+            label(for="password") Password: 
+            input(type="password" name="password" id="password")
+            br
+            input(type="submit" value="Submit" class="button")
+            button
+                a(href="#") Change Password
+            button
+                a(href="#") Recover Password  

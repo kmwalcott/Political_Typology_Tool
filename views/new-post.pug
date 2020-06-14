@@ -1,0 +1,104 @@
+extends my-dashboard
+
+block unique-content
+    form(action="http://localhost:5000/auth/signout?_method=DELETE", method="POST", class="form-centered")
+        input(type="submit" value="Sign Out" class="button")  
+    h2(class="page-title-center") Add a New Statement 
+    form(action="http://localhost:5000/posts", method="POST" class="form-centered")
+        label(for="politician") Politician's Name: 
+        input(type="text" name="politician" id="politician")
+        br
+        label(for="party") Politician's Party:
+        select(name="party" id="party")
+            option(value="" ) --Choose a party--
+            option(value="Republican" ) Republican
+            option(value="Democrat" ) Democrat
+            option(value="Libertarian" ) Libertarian
+            option(value="Green" ) Green
+            option(value="Independent" ) Independent
+            option(value="Other" ) Other
+        br
+        label(for="state") Politician's State:
+        select(name="state" id="state") 
+            option(value="") --Choose a state--
+            option(value="Alabama" ) Alabama
+            option(value="Alaska" ) Alaska
+            option(value="Arizona" ) Arizona
+            option(value="Arkansas" ) Arkansas
+            option(value="California" ) California
+            option(value="Colorado" ) Colorado
+            option(value="Connecticut" ) Connecticut
+            option(value="Delaware" ) Delaware
+            option(value="Florida" ) Florida
+            option(value="Georgia" ) Georgia
+            option(value="Hawaii" ) Hawaii
+            option(value="Idaho" ) Idaho
+            option(value="Illinois" ) Illinois
+            option(value="Indiana" ) Indiana
+            option(value="Iowa" ) Iowa
+            option(value="Kansas" ) Kansas
+            option(value="Kentucky" ) Kentucky
+            option(value="Louisiana" ) Louisiana
+            option(value="Maine" ) Maine
+            option(value="Maryland" ) Maryland
+            option(value="Massachusetts" ) Massachusetts
+            option(value="Michigan" ) Michigan
+            option(value="Minnesota" ) Minnesota
+            option(value="Mississippi" ) Mississippi
+            option(value="Missouri" ) Missouri
+            option(value="Montana" ) Montana
+            option(value="Nebraska" ) Nebraska
+            option(value="Nevada" ) Nevada
+            option(value="New Hampshire" ) New Hampshire
+            option(value="New Jersey" ) New Jersey
+            option(value="New Mexico" ) New Mexico
+            option(value="New York" ) New York
+            option(value="North Carolina" ) North Carolina
+            option(value="North Dakota" ) North Dakota
+            option(value="Ohio" ) Ohio
+            option(value="Oklahoma" ) Oklahoma
+            option(value="Oregon") Oregon
+            option(value="Pennsylvania" ) Pennsylvania
+            option(value="Rhode Island" ) Rhode Island
+            option(value="South Carolina" ) South Carolina
+            option(value="South Dakota" ) South Dakota
+            option(value="Tennessee" ) Tennessee
+            option(value="Texas" ) Texas
+            option(value="Utah") Utah
+            option(value="Vermont" ) Vermont
+            option(value="Virginia") Virginia
+            option(value="Washington") Washington
+            option(value="West Virginia" ) West Virginia
+            option(value="Wisconsin" ) Wisconsin
+            option(value="Wyoming") Wyoming
+        br
+        label(for="level") Politician's Level of Government:
+        select(name="level" id="level") 
+            option(value="") --Choose level of government--
+            option(value="Local") Local
+            option(value="State") State
+            option(value="Federal") Federal
+        br
+        label(for="question") Question:
+        select(name="question" id="question")  
+            option(value="") --Choose question--
+            option(value="question1") question1
+            option(value="question2") question2
+            option(value="question3") question3
+        br
+        label(for="stance") Stance:
+        select(name="stance" id="stance") 
+            option(value="") --Choose stance on question--
+            option(value="lib") Libertarian
+            option(value="int") Interventionist
+        br
+        label(for="content") Quote:
+        textarea(name="content" id="content" placeholder="Enter full statement or video summary here")
+        br
+        label(for="video") Paste Video Embed Link Here (Optional): 
+        input(type="text" name="video" id="video")
+        br
+        label(for="username") Enter Your Username: 
+        input(type="text" name="username" id="username")
+        br
+        input(type="submit" value="Post" class="button")         

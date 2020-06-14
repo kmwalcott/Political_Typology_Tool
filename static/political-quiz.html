@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="http://localhost:5000/auth/register">Register</a></li>
+            <li><a href="http://localhost:5000/auth/signin">Sign In</a></li>
+            <li><a href="search-filter.html">Search Database</a></li>
+            <li><a href="http://localhost:5000/quiz">Quiz</a></li>
+            <li><a href="http://localhost:5000/my-dashboard/my-posts">Manage Posts</a>
+                <ul>
+                    <li><a href="http://localhost:5000/my-dashboard/new-post">New Post</a></li>
+                    <li><a href="http://localhost:5000/my-dashboard/my-posts">My Posts</a></li>
+                    <li><a href="http://localhost:5000/my-dashboard/upvoted-posts">Upvoted Posts</a></li>
+                    <li><a href="http://localhost:5000/my-dashboard/flagged-posts">Flagged Posts</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
+    <div class="clr"></div>
+    <form action='http://localhost:5000/quiz' method='POST' id="quiz-form">
+        <h1 class="page-title-center">Quiz Questions</h1>
+        
+        <fieldset>
+        <legend><h2>Economic Issues</h2></legend>
+        Question 1: Are tax increases acceptable as part of a deal to reduce the national debt? <br>
+        <input type="radio" name="question1" value="0">No <br>
+        <input type="radio" name="question1" value="1">Yes <br>
+        Question 2: Should state governments require a license to practice medicine? <br>
+        <input type="radio" name="question2" value="1">Yes <br>
+        <input type="radio" name="question2" value="0">No <br>
+        </fieldset>
+
+        <fieldset>
+            <legend><h2>Social Issues</h2></legend>
+            Question 3: Should marijuana be legal? <br>
+            <input type="radio" name="question3" value="0">Yes <br>
+            <input type="radio" name="question3" value="1">No <br>
+            Question 4: Should gay marriage be legal? <br>
+            <input type="radio" name="question4" value="0">Yes <br>
+            <input type="radio" name="question4" value="1">No <br>
+            
+        </fieldset>
+
+        <fieldset>
+            <legend><h2>Foreign Policy Issues</h2></legend>
+            Question 5: Should defense spending be increased or decreased? <br>
+            <input type="radio" name="question5" value="1">Increased <br>
+            <input type="radio" name="question5" value="0">Decreased <br>
+            Question 6: Should the US government support a coup in Venezuela? <br>
+            <input type="radio" name="question6" value="1">Yes <br>
+            <input type="radio" name="question6" value="0">No <br>
+            
+        </fieldset>
+
+        
+        <input type="submit" value="Submit" class="button">
+    </form>
+       
+</body>
+</html>
