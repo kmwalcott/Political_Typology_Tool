@@ -12,12 +12,12 @@ function signed_in_only(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-    res.redirect('http://localhost:5000/auth/signin');
+    res.redirect('/auth/signin');
 }
 
 function signed_out_only(req, res, next){
     if(req.isAuthenticated()){
-        return res.redirect('http://localhost:5000/my-dashboard/new-post');
+        return res.redirect('/my-dashboard/new-post');
     }
     next();
 }

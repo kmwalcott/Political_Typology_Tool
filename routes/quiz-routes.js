@@ -27,13 +27,13 @@ async function get_existing_results(req, res, next){
 //@Route get request to /quiz
 //@Description: Go to quiz. 
 router.get('/', get_existing_results, (req,res)=> {
-    res.redirect('http://localhost:5000/political-quiz.html');
+    res.redirect('/political-quiz.html');
 })
 
 //@Route get request to /quiz/retake-quiz
 //@Description: Go to quiz. 
 router.get('/retake-quiz', (req,res)=> {
-    res.redirect('http://localhost:5000/political-quiz.html');
+    res.redirect('/political-quiz.html');
 })
 
 //@Route post request to /quiz

@@ -38,12 +38,12 @@ function signed_in_only(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-    res.redirect('http://localhost:5000/auth/signin');
+    res.redirect('/auth/signin');
 }
 
 function signed_out_only(req, res, next){
     if(req.isAuthenticated()){
-        return res.redirect('http://localhost:5000/my-dashboard/new-post');
+        return res.redirect('/my-dashboard/new-post');
     }
     next();
 }
@@ -75,9 +75,9 @@ router.post('/register', async (req,res)=>{
         var newUser = new Users(user_object);
         const result = await newUser.save();
         //console.log(result);
-        res.redirect('http://localhost:5000/auth/signin');
+        res.redirect('/auth/signin');
     }
-    catch{res.redirect('http://localhost:5000/auth/register');}
+    catch{res.redirect('/auth/register');}
 })
 
 //@Route get request to /auth/signin
@@ -91,8 +91,8 @@ router.get('/signin', signed_out_only, (req,res)=>{
 //@Description: Sign in. Form submission. 
 //Access: Public
 router.post('/signin', passport.authenticate('local',{
-    successRedirect: 'http://localhost:5000/my-dashboard/new-post',
-    failureRedirect: 'http://localhost:5000/auth/signin',
+    successRedirect: '/my-dashboard/new-post',
+    failureRedirect: '/auth/signin',
     failureFlash: true
 }))
 
@@ -101,7 +101,7 @@ router.post('/signin', passport.authenticate('local',{
 //Access: Public
 router.delete('/signout', (req,res)=>{
     req.logOut();
-    res.redirect('http://localhost:5000/auth/signin');    
+    res.redirect('/auth/signin');    
 })
 
 

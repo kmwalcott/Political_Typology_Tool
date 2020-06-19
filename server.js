@@ -25,7 +25,7 @@ app.set('view engine', 'pug');
 //Parse json and urlencoded requests
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 
 //Passport Configuration II: Middleware
@@ -47,6 +47,7 @@ app.listen(port, ()=> console.log(`Listening on port ${port}`));
 
 
 //Connect to Mongo
+mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
     .then(()=> console.log('Mongo connected...'))
     .catch(err => console.log(err));

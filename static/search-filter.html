@@ -7,23 +7,23 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="http://localhost:5000/auth/register">Register</a></li>
-            <li><a href="http://localhost:5000/auth/signin">Sign In</a></li>
+            <li><a href="/auth/register">Register</a></li>
+            <li><a href="/auth/signin">Sign In</a></li>
             <li><a href="search-filter.html">Search Database</a></li>
-            <li><a href="http://localhost:5000/quiz">Quiz</a></li>
-            <li><a href="http://localhost:5000/my-dashboard/my-posts">Manage Posts</a>
+            <li><a href="/quiz">Quiz</a></li>
+            <li><a href="/my-dashboard/my-posts">Manage Posts</a>
                 <ul>
-                    <li><a href="http://localhost:5000/my-dashboard/new-post">New Post</a></li>
-                    <li><a href="http://localhost:5000/my-dashboard/my-posts">My Posts</a></li>
-                    <li><a href="http://localhost:5000/my-dashboard/upvoted-posts">Upvoted Posts</a></li>
-                    <li><a href="http://localhost:5000/my-dashboard/flagged-posts">Flagged Posts</a></li>
+                    <li><a href="/my-dashboard/new-post">New Post</a></li>
+                    <li><a href="/my-dashboard/my-posts">My Posts</a></li>
+                    <li><a href="/my-dashboard/upvoted-posts">Upvoted Posts</a></li>
+                    <li><a href="/my-dashboard/flagged-posts">Flagged Posts</a></li>
                 </ul>
             </li>
         </ul>
     </nav> 
     <div class="clr"></div>
     <h1 class="page-title-center">Search Database</h1>
-    <form action='http://localhost:5000/posts/search' method='POST' class="form-centered">
+    <form action='/posts/search' method='POST' class="form-centered">
         <div>
         <label for="search_by">Search by:</label>
         <input type="radio" value="Question" name="search_by" id="search_by">Question

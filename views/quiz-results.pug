@@ -8,26 +8,26 @@ html
                 li       
                     a(href="index.html") Home   
                 li 
-                    a(href="http://localhost:5000/auth/register") Register
+                    a(href="/auth/register") Register
                 li 
-                    a(href="http://localhost:5000/auth/signin") Sign In
+                    a(href="/auth/signin") Sign In
                 li 
                     a(href="search-filter.html") Search Database
                 li 
-                    a(href="http://localhost:5000/quiz") Quiz
+                    a(href="/quiz") Quiz
                 li 
-                    a(href="http://localhost:5000/my-dashboard/my-posts") Manage Posts
+                    a(href="/my-dashboard/my-posts") Manage Posts
                     ul 
                         li 
-                            a(href="http://localhost:5000/my-dashboard/new-post") New Post
+                            a(href="/my-dashboard/new-post") New Post
                         li 
-                            a(href="http://localhost:5000/my-dashboard/my-posts") My Posts   
+                            a(href="/my-dashboard/my-posts") My Posts   
                         li 
-                            a(href="http://localhost:5000/my-dashboard/upvoted-posts") Upvoted Posts  
+                            a(href="/my-dashboard/upvoted-posts") Upvoted Posts  
                         li 
-                            a(href="http://localhost:5000/my-dashboard/flagged-posts") Flagged Posts        
+                            a(href="/my-dashboard/flagged-posts") Flagged Posts        
         div.clr
         p You are #{ideology}! Your economic score is #{econ_score} (#{econ_ideology}), your social score is #{social_score} (#{social_ideology}), and your foreign policy score is #{fp_score} (#{fp_ideology}).
-        form(action="http://localhost:5000/quiz/retake-quiz" method="GET")
+        form(action="/quiz/retake-quiz" method="GET")
             input(type="submit" value="Retake Quiz" class="button") 
         

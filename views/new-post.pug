@@ -1,10 +1,10 @@
 extends my-dashboard
 
 block unique-content
-    form(action="http://localhost:5000/auth/signout?_method=DELETE", method="POST", class="form-centered")
+    form(action="/auth/signout?_method=DELETE", method="POST", class="form-centered")
         input(type="submit" value="Sign Out" class="button")  
     h2(class="page-title-center") Add a New Statement 
-    form(action="http://localhost:5000/posts", method="POST" class="form-centered")
+    form(action="/posts", method="POST" class="form-centered")
         label(for="politician") Politician's Name: 
         input(type="text" name="politician" id="politician")
         br
