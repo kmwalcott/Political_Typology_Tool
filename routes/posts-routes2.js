@@ -56,7 +56,7 @@ router.post('/', (req,res) =>{
     newPost.save((err,result)=>{
         if(err){res.status(400).send(err)}
         //else{res.status(200).json(result)}
-        else{res.redirect('/dashboard-filter.html')
+        else{res.redirect('/my-dashboard/new-post');
         }
     })
 });
