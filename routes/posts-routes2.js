@@ -151,7 +151,7 @@ router.post('/update', (req,res) =>{
 
     Posts.findOneAndUpdate({ "_id":my_id },{"politician":politician, "state":state, "level":level,"question":question, "stance":stance, "content":content}, {useFindAndModify: false}, (err,result)=>{
         if(err){res.status(400).send(err)}
-        else{res.redirect('/dashboard-filter.html')}
+        else{res.redirect('/my-dashboard/my-posts')}
     })
 
 });
