@@ -115,7 +115,7 @@ function get_ideology (econ_ideology, social_ideology, fp_ideology){
     return ideology;
 }
 
-if (req.isAuthenticated){
+if (typeof req.user !== 'undefined'){
     Users.findOneAndUpdate({"username": req.user.username}, {"ideology":ideology, "econ_ideology":econ_ideology, "econ_score":econ_score, "social_ideology":social_ideology, "social_score":social_score, "fp_ideology":fp_ideology, "fp_score":fp_score}, {useFindAndModify: false}, (err,result)=>{
         if(err){res.status(400).send(err)}
         
