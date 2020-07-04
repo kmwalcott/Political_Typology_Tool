@@ -33,7 +33,7 @@ router.post('/', (req,res) =>{
     let stance = body.stance;
     let content = body.content;
     let video = body.video;
-    let user = body.username;
+    let user = req.user.username;
 
     
     post_object = {
