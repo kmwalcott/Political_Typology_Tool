@@ -1,10 +1,10 @@
 extends my-dashboard
 
 block unique-content
-    form(action="/auth/signout?_method=DELETE", method="POST", class="form-centered")
+    form(action="/auth/signout?_method=DELETE", method="POST", class="form-centered", class="form-bordered")
         input(type="submit" value="Sign Out" class="button")  
     h2(class="page-title-center") Add a New Statement 
-    form(action="/posts", method="POST" class="form-centered")
+    form(action="/posts", method="POST", class="form-centered", class="form-bordered")
         label(for="politician") Politician's Name: 
         input(type="text" name="politician" id="politician" required)
         br
@@ -82,9 +82,12 @@ block unique-content
         label(for="question") Question:
         select(name="question" id="question" required)  
             option(value="") --Choose question--
-            option(value="question1") question1
-            option(value="question2") question2
-            option(value="question3") question3
+            option(value="question1") Are tax increases acceptable as part of a deal to reduce the national debt?
+            option(value="question2") Should state governments require a license to practice medicine?
+            option(value="question3") Should marijuana be legal?
+            option(value="question4") Should gay marriage be legal?
+            option(value="question5") Should defense spending be increased or decreased?
+            option(value="question6") Should the US government support a coup in Venezuela?
         br
         label(for="stance") Stance:
         select(name="stance" id="stance" required) 

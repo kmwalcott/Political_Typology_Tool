@@ -98,9 +98,12 @@ document.querySelector('#wrapper1').addEventListener('click', function(e){
                 <label for="question">Question: </label>
                 <select name="question" id="question" required>
                     <option value=" ">--Choose question--</option>
-                    <option value="question1">question1</option>
-                    <option value="question2">question2</option>
-                    <option value="question3">question3</option>
+                    <option value="question1">Are tax increases acceptable as part of a deal to reduce the national debt?</option>
+                    <option value="question2">Should state governments require a license to practice medicine?</option>
+                    <option value="question3">Should marijuana be legal?</option>
+                    <option value="question4">Should gay marriage be legal?</option>
+                    <option value="question5">Should defense spending be increased or decreased?</option>
+                    <option value="question6">Should the US government support a coup in Venezuela?</option>
                 </select>
                 <br>
                 <label for="stance">Stance: </label>

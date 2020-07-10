@@ -32,7 +32,7 @@ html
         -var error_message = ''
         -if(messages.error){error_message = messages.error}
         h2=error_message
-        form(action="/auth/signin", method="POST")
+        form(action="/auth/signin", method="POST", class="form-bordered")
             label(for="username") Username: 
             input(type="text" name="username" id="username")
             br
@@ -40,7 +40,4 @@ html
             input(type="password" name="password" id="password")
             br
             input(type="submit" value="Submit" class="button")
-            button
-                a(href="#") Change Password
-            button
-                a(href="#") Recover Password  
+            

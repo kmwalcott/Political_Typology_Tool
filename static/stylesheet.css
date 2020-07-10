@@ -99,14 +99,14 @@ fieldset{
     margin: 10px;
 }
 
-form{
-    border: 3px black solid; 
+.form-bordered{
+    border: 3px black solid;
     background-color: #002868;
     color: white;
     width: 40%;
     margin-left: 2%;
     margin-top: 20px;
-    line-height: 2;  
+    line-height: 2;   
 }
 
 form .button, form button {

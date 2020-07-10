@@ -1,7 +1,7 @@
 extends my-dashboard 
 
 block unique-content
-    form(action="/auth/signout?_method=DELETE", method="POST" class="form-centered")
+    form(action="/auth/signout?_method=DELETE", method="POST", class="form-centered", class="form-bordered")
         input(type="submit" value="Sign Out" class="button") 
     h2(class="page-title-center") My Posts
     div#wrapper1 

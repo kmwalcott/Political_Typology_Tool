@@ -24,28 +24,17 @@ function signed_out_only(req, res, next){
 //@Description: Create a post. Form submission. 
 //Access: Password required
 router.post('/', (req,res) =>{
-    var body = req.body;
-    let politician = body.politician;
-    let party = body.party;
-    let state = body.state;
-    let level = body.level;
-    let question = body.question;
-    let stance = body.stance;
-    let content = body.content;
-    let video = body.video;
-    let user = req.user.username;
-
     
     post_object = {
-        "politician":politician,
-        "party":party,
-        "state":state,
-        "level":level,
-        "question":question,
-        "stance":stance,
-        "content":content,
-        "video":video,
-        "user":user,
+        "politician":req.body.politician,
+        "party":req.body.party,
+        "state":req.body.state,
+        "level":req.body.level,
+        "question":req.body.question,
+        "stance":req.body.stance,
+        "content":req.body.content,
+        "video":req.body.video,
+        "user":req.user.username,
         "upvotes": 0,
         "flagged": false,
         "flag_message": "",
@@ -137,23 +126,11 @@ router.post('/search', (req,res) =>{
 //@Description: Edit post. Form submission.
 //Access: password required
 router.post('/update', (req,res) =>{
-    var body = req.body;
-    let politician = body.politician;
-    let state = body.state;
-    let level = body.level;
-    let question = body.question;
-    let stance = body.stance;
-    let content = body.content;
-    let my_id = body._id;
     
-
-
-
-    Posts.findOneAndUpdate({ "_id":my_id },{"politician":politician, "state":state, "level":level,"question":question, "stance":stance, "content":content}, {useFindAndModify: false}, (err,result)=>{
+    Posts.findOneAndUpdate({ "_id":req.body._id},{"politician":req.body.politician, "state":req.body.state, "level":req.body.level,"question":req.body.question, "stance":req.body.stance, "content":req.body.content}, {useFindAndModify: false}, (err,result)=>{
         if(err){res.status(400).send(err)}
         else{res.redirect('/my-dashboard/my-posts')}
     })
-
 });
 
 
@@ -236,10 +213,8 @@ router.put('/unflag', (req,res) =>{
 //@Description: Delete post. AJAX request.
 //@Access: Password required
 router.delete('/', (req,res) =>{
-    var body = req.body;
-    let id = body._id;
     
-    Posts.deleteOne({ "_id":id },(err,result)=>{
+    Posts.deleteOne({ "_id":req.body._id},(err,result)=>{
         if(err){res.status(400).send(err)}
     })
 });
