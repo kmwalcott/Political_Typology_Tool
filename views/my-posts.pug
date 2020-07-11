@@ -13,7 +13,7 @@ block unique-content
                     -if(post.flagged){flagged_string="Yes"} else{flagged_string="No"}
                     -if(post.video==""){my_display="none"} else{my_display="inline"}
                     div(id=`${my_id}` class="post" data-username=`${post.user}`) 
-                        p(style="display:none")=' '+post.politician+' '+post.state+' '+post.level+' '+post.question+' '+post.stance+' '+post.party+' '+content_length+' '+post.content+' '
+                        p(style="display:none")=' '+post.politician+' '+post.state+' '+post.level+' '+post.question+' '+post.stance+' '+post.party+' '+post.video+' '+content_length+' '+post.content+' '
                         iframe(width=512 height=330 class=my_display src=post.video allowfullscreen='allowfullscreen' frameborder=0)    
                         p= post.content  
                         p= '('+post.politician+', ' +post.level+' politician from '+post.state+', ' +post.party+')'

@@ -6,6 +6,7 @@ document.querySelector('#wrapper1').addEventListener('click', function(e){
     if (e.target.matches('.edit-button')){ 
         let my_id = e.target.parentElement.id; 
         old = e.target.parentElement.innerHTML; 
+        console.log(old);
         //console.log(old.split(' '));
         let old_politician = '\''+old.split(' ')[3]+' '+old.split(' ')[4]+'\'';
         let old_state = old.split(' ')[5];
@@ -13,9 +14,10 @@ document.querySelector('#wrapper1').addEventListener('click', function(e){
         let old_question = old.split(' ')[7];
         let old_stance = old.split(' ')[8]; 
         let old_party = old.split(' ')[9]; 
-        let content_length = parseInt(old.split(' ')[10]);
+        let old_video = old.split(' ')[10]; 
+        let content_length = parseInt(old.split(' ')[11]);
         //console.log(content_length);
-        let old_content_parsed = old.split(' ').slice(11,11+content_length);  
+        let old_content_parsed = old.split(' ').slice(12,12+content_length);  
         //console.log(old_content_parsed);
         let old_content = old_content_parsed.join(' ');
         //console.log(old_content);
@@ -98,8 +100,8 @@ document.querySelector('#wrapper1').addEventListener('click', function(e){
                 <label for="question">Question: </label>
                 <select name="question" id="question" required>
                     <option value=" ">--Choose question--</option>
-                    <option value="question1">Are tax increases acceptable as part of a deal to reduce the national debt?</option>
-                    <option value="question2">Should state governments require a license to practice medicine?</option>
+                    <option value="question1">Should the mortgage interest deduction be eliminated from the tax code?</option>
+                    <option value="question2">Should states relax scope of practice laws for nurse practitioners?</option>
                     <option value="question3">Should marijuana be legal?</option>
                     <option value="question4">Should gay marriage be legal?</option>
                     <option value="question5">Should defense spending be increased or decreased?</option>
@@ -113,6 +115,8 @@ document.querySelector('#wrapper1').addEventListener('click', function(e){
                     <option value="int">Interventionist</option>
                 </select>
                 <br>
+                <label for="video">Paste Video Embed Link Here (Optional): </label>
+                <input type = "text" name="video" id="video" value=${old_video}> <br>
                 <label for="content">Quote: </label>
                 <textarea name="content" id="content" required>${old_content}</textarea>
                 <br>

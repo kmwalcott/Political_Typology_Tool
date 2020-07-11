@@ -127,7 +127,7 @@ router.post('/search', (req,res) =>{
 //Access: password required
 router.post('/update', (req,res) =>{
     
-    Posts.findOneAndUpdate({ "_id":req.body._id},{"politician":req.body.politician, "state":req.body.state, "level":req.body.level,"question":req.body.question, "stance":req.body.stance, "content":req.body.content}, {useFindAndModify: false}, (err,result)=>{
+    Posts.findOneAndUpdate({ "_id":req.body._id},{"politician":req.body.politician, "state":req.body.state, "level":req.body.level,"question":req.body.question, "stance":req.body.stance, "content":req.body.content, "party":req.body.party, "video":req.body.video}, {useFindAndModify: false}, (err,result)=>{
         if(err){res.status(400).send(err)}
         else{res.redirect('/my-dashboard/my-posts')}
     })
