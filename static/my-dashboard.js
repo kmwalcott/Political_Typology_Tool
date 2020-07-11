@@ -22,7 +22,7 @@ document.querySelector('#wrapper1').addEventListener('click', function(e){
         let old_content = old_content_parsed.join(' ');
         //console.log(old_content);
         e.target.parentElement.innerHTML = `
-        <form method="POST" action="http://localhost:5000/posts/update">
+        <form method="POST" action="/posts/update">
                 <label for="politician">Politician's Name: </label>
                 <input type = "text" name="politician" id="politician" value=${old_politician} required> <br>
                 <label for="state">Politician's State: </label>
