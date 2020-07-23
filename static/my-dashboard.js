@@ -115,10 +115,8 @@ document.querySelector('#wrapper1').addEventListener('click', function(e){
                     <option value="int">Interventionist</option>
                 </select>
                 <br>
-                <label for="video">Paste Video Embed Link Here (Optional): </label>
-                <input type = "text" name="video" id="video" value=${old_video}> <br>
                 <label for="content">Quote: </label>
-                <textarea name="content" id="content" required>${old_content}</textarea>
+                <textarea name="content" id="content" rows="5" cols="50" required>${old_content}</textarea>
                 <br>
                 <input type="hidden" name="_id" value=${my_id}>
                 <button class="cancel-button" class="button">Cancel</button>

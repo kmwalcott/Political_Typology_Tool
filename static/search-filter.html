@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -23,102 +25,109 @@
     </nav> 
     <div class="clr"></div>
     <h1 class="page-title-center">Search Database</h1>
-    <form action='/posts/search' method='POST' class="form-centered form-bordered">
-        <div>
-        <label for="search_by">Search by:</label>
-        <input type="radio" value="Question" name="search_by" id="search_by">Question
-        <input type="radio" value="Politician" name="search_by">Politician's Name <br>  
-       </div>
-       <label for="question">Question: </label> 
-       <select name="question" id="question">
-            <option value="">--Select question--</option>
-            <option value="question1">Should the mortgage interest deduction be eliminated from the tax code?</option>
-            <option value="question2">Should states relax scope of practice laws for nurse practitioners?</option>
-            <option value="question3">Should marijuana be legal?</option>
-            <option value="question4">Should gay marriage be legal?</option>
-            <option value="question5">Should defense spending be increased or decreased?</option>
-            <option value="question6">Should the US government support a coup in Venezuela?</option>
-        </select>
-        <br>
-        <label for="party">Party: </label>
-        <select name="party" id="party">
-            <option value="">--Choose a party--</option>
-            <option value="Republican">Republican</option>
-            <option value="Democrat">Democrat</option>
-            <option value="Libertarian">Libertarian</option>
-            <option value="Green">Green</option>
-            <option value="Independent">Independent</option>
-            <option value="Other">Other</option>
-        </select>
-        <label for="state">State: </label> 
-        <select name="state" id="state">
-            <option value="">--Choose a state</option>
-            <option value="Alabama" >Alabama</option>
-            <option value="Alaska" >Alaska</option>
-            <option value="Arizona" >Arizona</option>
-            <option value="Arkansas" >Arkansas</option>
-            <option value="California" >California</option>
-            <option value="Colorado" >Colorado</option>
-            <option value="Connecticut" >Connecticut</option>
-            <option value="Delaware" >Delaware</option>
-            <option value="Florida" >Florida</option>
-            <option value="Georgia" >Georgia</option>
-            <option value="Hawaii" >Hawaii</option>
-            <option value="Idaho" >Idaho</option>
-            <option value="Illinois" >Illinois</option>
-            <option value="Indiana" >Indiana</option>
-            <option value="Iowa" >Iowa</option>
-            <option value="Kansas" >Kansas</option>
-            <option value="Kentucky" >Kentucky</option>
-            <option value="Louisiana" >Louisiana</option>
-            <option value="Maine" >Maine</option>
-            <option value="Maryland" >Maryland</option>
-            <option value="Massachusetts" >Massachusetts</option>
-            <option value="Michigan" >Michigan</option>
-            <option value="Minnesota" >Minnesota</option>
-            <option value="Mississippi" >Mississippi</option>
-            <option value="Missouri" >Missouri</option>
-            <option value="Montana" >Montana</option>
-            <option value="Nebraska" >Nebraska</option>
-            <option value="Nevada" >Nevada</option>
-            <option value="New Hampshire" >New Hampshire</option>
-            <option value="New Jersey" >New Jersey</option>
-            <option value="New Mexico" >New Mexico</option>
-            <option value="New York" >New York</option>
-            <option value="North Carolina" >North Carolina</option>
-            <option value="North Dakota" >North Dakota</option>
-            <option value="Ohio" >Ohio</option>
-            <option value="Oklahoma" >Oklahoma</option>
-            <option value="Oregon">Oregon</option>
-            <option value="Pennsylvania" >Pennsylvania</option>
-            <option value="Rhode Island" >Rhode Island</option>
-            <option value="South Carolina" >South Carolina</option>
-            <option value="South Dakota" >South Dakota</option>
-            <option value="Tennessee" >Tennessee</option>
-            <option value="Texas" >Texas</option>
-            <option value="Utah">Utah</option>
-            <option value="Vermont" >Vermont</option>
-            <option value="Virginia">Virginia</option>
-            <option value="Washington">Washington</option>
-            <option value="West Virginia" >West Virginia</option>
-            <option value="Wisconsin" >Wisconsin</option>
-            <option value="Wyoming">Wyoming</option>
-        </select>
-        <br>
-        <label for="level">Level of Government: </label> 
-        <select name="level" id="level">
-            <option value="">--Choose level of government--</option>
-            <option value="Local">Local</option>
-            <option value="State">State</option>
-            <option value="Federal">Federal</option>
-        </select>
-        <br>
-        <label for="politician">Politician's Name: </label>
-        <input type = "text" name="politician" id="politician">
-        <br>
-        <input type="submit" value="Apply Filter" class="button">
-    </form>
-
+    <div class="container">
+        <form action='/posts/search' method='POST' class="form-centered form-bordered">
+            <div>
+            <label for="search_by">Search by:</label>
+            <input type="radio" value="Question" name="search_by" id="search_by">Question
+            <input type="radio" value="Politician" name="search_by">Politician's Name <br>  
+            </div>
+            <div class="form-group">
+                <label for="question">Question: </label> 
+                <select class="form-control" name="question" id="question">
+                    <option value="">--Select question--</option>
+                    <option value="question1">Should the mortgage interest deduction be eliminated from the tax code?</option>
+                    <option value="question2">Should states relax scope of practice laws for nurse practitioners?</option>
+                    <option value="question3">Should marijuana be legal?</option>
+                    <option value="question4">Should gay marriage be legal?</option>
+                    <option value="question5">Should defense spending be increased or decreased?</option>
+                    <option value="question6">Should the US government support a coup in Venezuela?</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="party">Party: </label>
+                <select class="form-control" name="party" id="party">
+                    <option value="">--Choose a party--</option>
+                    <option value="Republican">Republican</option>
+                    <option value="Democrat">Democrat</option>
+                    <option value="Libertarian">Libertarian</option>
+                    <option value="Green">Green</option>
+                    <option value="Independent">Independent</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="state">State: </label> 
+                <select class="form-control" name="state" id="state">
+                    <option value="">--Choose a state--</option>
+                    <option value="Alabama" >Alabama</option>
+                    <option value="Alaska" >Alaska</option>
+                    <option value="Arizona" >Arizona</option>
+                    <option value="Arkansas" >Arkansas</option>
+                    <option value="California" >California</option>
+                    <option value="Colorado" >Colorado</option>
+                    <option value="Connecticut" >Connecticut</option>
+                    <option value="Delaware" >Delaware</option>
+                    <option value="Florida" >Florida</option>
+                    <option value="Georgia" >Georgia</option>
+                    <option value="Hawaii" >Hawaii</option>
+                    <option value="Idaho" >Idaho</option>
+                    <option value="Illinois" >Illinois</option>
+                    <option value="Indiana" >Indiana</option>
+                    <option value="Iowa" >Iowa</option>
+                    <option value="Kansas" >Kansas</option>
+                    <option value="Kentucky" >Kentucky</option>
+                    <option value="Louisiana" >Louisiana</option>
+                    <option value="Maine" >Maine</option>
+                    <option value="Maryland" >Maryland</option>
+                    <option value="Massachusetts" >Massachusetts</option>
+                    <option value="Michigan" >Michigan</option>
+                    <option value="Minnesota" >Minnesota</option>
+                    <option value="Mississippi" >Mississippi</option>
+                    <option value="Missouri" >Missouri</option>
+                    <option value="Montana" >Montana</option>
+                    <option value="Nebraska" >Nebraska</option>
+                    <option value="Nevada" >Nevada</option>
+                    <option value="New Hampshire" >New Hampshire</option>
+                    <option value="New Jersey" >New Jersey</option>
+                    <option value="New Mexico" >New Mexico</option>
+                    <option value="New York" >New York</option>
+                    <option value="North Carolina" >North Carolina</option>
+                    <option value="North Dakota" >North Dakota</option>
+                    <option value="Ohio" >Ohio</option>
+                    <option value="Oklahoma" >Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Pennsylvania" >Pennsylvania</option>
+                    <option value="Rhode Island" >Rhode Island</option>
+                    <option value="South Carolina" >South Carolina</option>
+                    <option value="South Dakota" >South Dakota</option>
+                    <option value="Tennessee" >Tennessee</option>
+                    <option value="Texas" >Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont" >Vermont</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virginia" >West Virginia</option>
+                    <option value="Wisconsin" >Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="level">Level of Government: </label> 
+                <select class="form-control" name="level" id="level">
+                    <option value="">--Choose level of government--</option>
+                    <option value="Local">Local</option>
+                    <option value="State">State</option>
+                    <option value="Federal">Federal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="politician">Politician's Name: </label>
+                <input class="form-control" type = "text" name="politician" id="politician">
+            </div>
+            <input type="submit" value="Search" class="button">
+        </form>
+    </div>
     <!--
     <script>
         document.querySelector('#dashboard-link').addEventListener('click', function(e){

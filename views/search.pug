@@ -2,6 +2,7 @@ doctype html
 html
     head
         base(href="/")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
         link(href="stylesheet.css" rel="stylesheet" type="text/css")
     body
         nav
@@ -28,6 +29,10 @@ html
                         li 
                             a(href="/my-dashboard/new-post") New Post           
         div.clr
+        div.container
+            p(class="text-center") 
+                em Flagging and Upvoting Guidelines: Please flag posts for the following reasons: 1) The statement is not a faithful record of what was said 2)The statement's metadata is wrong 3) The person quoted is not a current or former public official (appointed or elected). Including the reason at the time of the flagging will expedite the process of alteration or removal. Upvote the posts that present the best arguments and evidence, not just the posts you agree with!
+        img(src=photo_url class="centered-image" width="40%")
         h1(class="page-title-center") Libertarian Position
         div#search-results
             div#lib-wrapper 
@@ -39,7 +44,6 @@ html
                     -if(post.flagged){flagged_string="Yes"; my_display2="none"} else{flagged_string="No"; my_display2="inline-block"}
                     -if(post.video==""){my_display="none"} else{my_display="inline"}
                     div(id=`${my_id}` class="post" data-username=`${post.user}`) 
-                        iframe(width=512 height=330 class=my_display src=post.video allowfullscreen='allowfullscreen' frameborder=0)    
                         p= post.content  
                         p= '('+post.politician+', ' +post.level+' politician from '+post.state+', ' +post.party+')'
                         small= 'Upvotes:'+post.upvotes+' Flagged:'+flagged_string+' User:'+post.user
@@ -55,7 +59,6 @@ html
                     -if(post.flagged){flagged_string="Yes"; my_display2="none"} else{flagged_string="No"; my_display2="inline-block"}
                     -if(post.video==""){my_display="none"} else{my_display="inline"}
                     div(id=`${my_id}` class="post" data-username=`${post.user}`) 
-                        iframe(width=512 height=330 class=my_display src=post.video allowfullscreen='allowfullscreen' frameborder=0)    
                         p= post.content
                         p= '('+post.politician+', ' +post.level+' politician from '+post.state+', ' +post.party+')'
                         small= 'Upvotes:'+post.upvotes+' Flagged:'+flagged_string+' User:'+post.user

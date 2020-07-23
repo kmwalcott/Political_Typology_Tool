@@ -1,6 +1,7 @@
 doctype html
 html
     head
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
         link(rel="stylesheet", href="stylesheet.css")
     body
         nav
@@ -27,7 +28,8 @@ html
                         li 
                             a(href="/my-dashboard/flagged-posts") Flagged Posts        
         div.clr
-        p You are #{ideology}! Your economic score is #{econ_score} (#{econ_ideology}), your social score is #{social_score} (#{social_ideology}), and your foreign policy score is #{fp_score} (#{fp_ideology}).
-        form(action="/quiz/retake-quiz" method="GET" class="form-bordered")
-            input(type="submit" value="Retake Quiz" class="button") 
+        div.container
+            p.text-center You are #{ideology}! Your economic score is #{econ_score} (#{econ_ideology}), your social score is #{social_score} (#{social_ideology}), and your foreign policy score is #{fp_score} (#{fp_ideology}).
+            form(action="/quiz/retake-quiz" method="GET" id="retake-quiz-form" class="text-center")
+                input(type="submit" value="Retake Quiz" class="retake-quiz-button") 
         

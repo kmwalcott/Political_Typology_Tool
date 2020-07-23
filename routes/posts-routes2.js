@@ -33,7 +33,7 @@ router.post('/', (req,res) =>{
         "question":req.body.question,
         "stance":req.body.stance,
         "content":req.body.content,
-        "video":req.body.video,
+        "video":"",
         "user":req.user.username,
         "upvotes": 0,
         "flagged": false,
@@ -104,22 +104,50 @@ router.post('/search', (req,res) =>{
         //else{res.status(200).send(result[0].politician)}
         
         else{
-            
-            for (let i=0; i < result.length; i++){
-                if (result[i].stance == "lib"){
-                    lib_posts.push(result[i]);
-                }
-                else if (result[i].stance =="int"){
-                    int_posts.push(result[i]);
-                }
+            //limit result count to 100
+            if(result.length > 100){
+                res.redirect('../refine-your-query.html');
             }
-            
-            
-            res.render('search.pug', {lib_posts:lib_posts, int_posts:int_posts});
+            else{
+                let photo_url = 'optimized-question2.jpg';
+                    switch(question){
+                        case 'question1':
+                            photo_url = 'optimized-question1.jpg';
+                            break;
+                        case 'question2':
+                            photo_url = 'optimized-question2.jpg';
+                            break;
+                        case 'question3':
+                            photo_url = 'optimized-question3.jpg';
+                            break;
+                        case 'question4':
+                            photo_url = 'optimized-question4.jpg';
+                            break;
+                        case 'question5':
+                            photo_url = 'optimized-question5.jpg';
+                            break;
+                        case 'question6':
+                            photo_url = 'optimized-question6.jpg';
+                            break;
+                        default:
+                            photo_url = 'optimized-question2.jpg';
+                    }
+                
+                for (let i=0; i < result.length; i++){
+                    if (result[i].stance == "lib"){
+                        lib_posts.push(result[i]);
+                    }
+                    else if (result[i].stance =="int"){
+                        int_posts.push(result[i]);
+                    }
+                }
+                
+                res.render('search.pug', {lib_posts:lib_posts, int_posts:int_posts, photo_url:photo_url});
+            }
         } 
     }).sort({upvotes:-1})
     
-    });
+});
 
 
 //@Route post request to /posts/update
@@ -127,7 +155,7 @@ router.post('/search', (req,res) =>{
 //Access: password required
 router.post('/update', (req,res) =>{
     
-    Posts.findOneAndUpdate({ "_id":req.body._id},{"politician":req.body.politician, "state":req.body.state, "level":req.body.level,"question":req.body.question, "stance":req.body.stance, "content":req.body.content, "party":req.body.party, "video":req.body.video}, {useFindAndModify: false}, (err,result)=>{
+    Posts.findOneAndUpdate({ "_id":req.body._id},{"politician":req.body.politician, "state":req.body.state, "level":req.body.level,"question":req.body.question, "stance":req.body.stance, "content":req.body.content, "party":req.body.party, "video":""}, {useFindAndModify: false}, (err,result)=>{
         if(err){res.status(400).send(err)}
         else{res.redirect('/my-dashboard/my-posts')}
     })

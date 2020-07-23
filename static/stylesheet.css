@@ -148,8 +148,40 @@ input[type="radio"] {
     display:inline-block
 }
 
+.centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+#logout-form{
+    float: right;
+    width: 100px;
+    height: 50px;
+    border: 3px black solid;
+    background-color: #002868;
+    text-align: center;
+}
 
+#retake-quiz-form{
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    border: 3px black solid;
+    background-color: #002868;
+}
 
+a, a:hover {
+    text-decoration: none;
+    color: black;
+}
 
+.retake-quiz-button {
+    background-color: #BF0A30;
+    border: 0px;
+    font-weight: bold;
+}
 
+.retake-quiz-button:hover {
+    background-color: #E7F2F8;
+}

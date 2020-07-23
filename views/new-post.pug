@@ -1,8 +1,9 @@
 extends my-dashboard
 
 block unique-content
-    form(action="/auth/signout?_method=DELETE", method="POST", class="form-centered", class="form-bordered")
-        input(type="submit" value="Sign Out" class="button")  
+    form(action="/auth/signout?_method=DELETE", method="POST", id="logout-form")
+        input(type="submit" value="Sign Out" class="button")
+    div.clr 
     h2(class="page-title-center") Add a New Statement 
     form(action="/posts", method="POST", class="form-centered", class="form-bordered")
         label(for="politician") Politician's Name: 
@@ -96,9 +97,6 @@ block unique-content
             option(value="int") Interventionist
         br
         label(for="content") Quote:
-        textarea(name="content" id="content" placeholder="Enter full statement or video summary here" required)
-        br
-        label(for="video") Paste Video Embed Link Here (Optional): 
-        input(type="text" name="video" id="video")
+        textarea(name="content" id="content" rows="5" cols="50" placeholder="Enter full statement or video summary here" required)
         br
         input(type="submit" value="Post" class="button")         

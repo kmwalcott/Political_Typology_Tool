@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="/auth/register">Register</a></li>
+            <li><a href="/auth/signin">Sign In</a></li>
+            <li><a href="search-filter.html">Search Database</a></li>
+            <li><a href="/quiz">Quiz</a></li>
+            <li><a href="/my-dashboard/new-post">Manage Posts</a>
+                <ul>
+                    <li><a href="/my-dashboard/new-post">New Post</a></li>
+                    <li><a href="/my-dashboard/my-posts">My Posts</a></li>
+                    <li><a href="/my-dashboard/upvoted-posts">Upvoted Posts</a></li>
+                    <li><a href="/my-dashboard/flagged-posts">Flagged Posts</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
+    <div class="clr"></div>
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Too many results...</h5>
+                <p class="card-text">Too many results! Please refine your query.</p>
+                <a href="../search-filter.html" class="btn btn-danger">Return to search</a>
+            </div>
+        </div>
+    </div>
+</body>    
+</html>

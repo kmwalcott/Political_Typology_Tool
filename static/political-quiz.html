@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <nav>
+    <nav id="main-menu">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="/auth/register">Register</a></li>
@@ -22,36 +23,38 @@
         </ul>
     </nav> 
     <div class="clr"></div>
+    <div class="container">
+        <p class="text-center"><em>Scoring: This quiz calculates your ideology score on a scale from 0 (most libertarian) to 2 (most interventionist) in the categories of economics, social issues, and foreign policy. The scores in those three areas are then combined to find your overall ideology. Nontraditional answers may return an ideology of "Other".</em></p>
+    </div>
     <form action='/quiz' method='POST' id="quiz-form" class="form-bordered">
-        <h1 class="page-title-center">Quiz Questions</h1>
-        
+        <h1 class="text-center">Quiz</h1>
         <fieldset>
-        <legend><h2>Economic Issues</h2></legend>
-        Question 1: Should the mortgage interest deduction be eliminated from the tax code?<br>
+        <legend><h2 class="page-title-center">Economic Issues</h2></legend>
+        <span class="badge badge-warning">Federal</span> Question 1: Should the mortgage interest deduction be eliminated from the tax code?<br>
         <input type="radio" name="question1" value="1">No <br>
         <input type="radio" name="question1" value="0">Yes <br>
-        Question 2: Should states relax scope of practice laws for nurse practitioners?<br>
+        <span class="badge badge-warning">State</span> Question 2: Should states relax scope of practice laws for nurse practitioners?<br>
         <input type="radio" name="question2" value="0">Yes <br>
         <input type="radio" name="question2" value="1">No <br>
         </fieldset>
 
         <fieldset>
-            <legend><h2>Social Issues</h2></legend>
-            Question 3: Should marijuana be legal? <br>
+            <legend><h2 class="page-title-center">Social Issues</h2></legend>
+            <span class="badge badge-warning">State</span> Question 3: Do you support legalizing recreational marijuana in your state? <br>
             <input type="radio" name="question3" value="0">Yes <br>
             <input type="radio" name="question3" value="1">No <br>
-            Question 4: Should gay marriage be legal? <br>
+            <span class="badge badge-warning">State</span> Question 4: If SCOTUS had not ruled on gay marriage, would you support legalizing gay marriage in your state? <br>
             <input type="radio" name="question4" value="0">Yes <br>
             <input type="radio" name="question4" value="1">No <br>
             
         </fieldset>
 
         <fieldset>
-            <legend><h2>Foreign Policy Issues</h2></legend>
-            Question 5: Should defense spending be increased or decreased? <br>
+            <legend><h2 class="page-title-center">Foreign Policy Issues</h2></legend>
+            <span class="badge badge-warning">Federal</span> Question 5: Should defense spending be increased or decreased? <br>
             <input type="radio" name="question5" value="1">Increased <br>
             <input type="radio" name="question5" value="0">Decreased <br>
-            Question 6: Should the US government support a coup in Venezuela? <br>
+            <span class="badge badge-warning">Federal</span> Question 6: Should the US government support a coup in Venezuela? <br>
             <input type="radio" name="question6" value="1">Yes <br>
             <input type="radio" name="question6" value="0">No <br>
             

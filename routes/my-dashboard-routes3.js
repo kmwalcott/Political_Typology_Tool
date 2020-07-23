@@ -32,8 +32,9 @@ router.get('/my-posts', signed_in_only, (req,res)=>{
             for (let i=0; i < result.length; i++){
                 all_posts.push(result[i]);
             }
+            res.render('my-posts', {all_posts:all_posts});
         }
-        res.render('my-posts', {all_posts:all_posts});
+        
     }).sort({upvotes:-1})  
     
 })
