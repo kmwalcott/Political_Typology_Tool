@@ -50,50 +50,73 @@ mod_score = 0;
 
     //Calculate scores 
 var body = req.body;
+var econ_number_answered = 0;
+var social_number_answered = 0;
+var fp_number_answered = 0;
+
 var i = 0;
+
+//FIXME Change every time the number of questions changes!
 for (var question in body){
-    if (i < 2) {
+    if (i < 10 && typeof body[question] === 'string') { // < # of econ questions
         econ_score = econ_score + parseInt(body[question]);
         i = i+1;
+        econ_number_answered++;
         //console.log(typeof(body[question]));
     }
-    else if (i<4) {
+    else if (i< 16 && typeof body[question] === 'string') { // < # of econ questions + # of social questions
         social_score = social_score + parseInt(body[question]);
         i = i+1;
+        social_number_answered++;
     }
 
-    else if (i<6) {
+    else if (i< 18 && typeof body[question] === 'string') { // < # of econ questions + # of social questions + # of fp questions 
         fp_score = fp_score + parseInt(body[question]);
-        i = i +1; 
+        i = i +1;
+        fp_number_answered++; 
     }
     
 }
+
+//Ensure no zero-values in denominator before scores are normalized
+if(econ_number_answered === 0){
+    econ_number_answered = 1;
+}
+if(social_number_answered === 0){
+    social_number_answered = 1;
+}
+if(fp_number_answered === 0){
+    fp_number_answered = 1;
+}
+
+//Normalize scores (place in range of -1 to +1)
+econ_score = econ_score/econ_number_answered;
+social_score = social_score/social_number_answered;
+fp_score = fp_score/fp_number_answered; 
 
 scores = [econ_score, social_score, fp_score];
 
 //Classify each score as libertarian, moderate, 
 //or interventionist. Count the number of moderate scores.  
 scores.forEach(function(score){
-    if (score == 0){
+    if (score >= -1 && score < -1/3){ //from -1 to -1/3
         ideology = "Libertarian";
     }
-    else if (score == 1){
+    else if (score >= -1/3 && score < 1/3){//from -1/3 to +1/3
         ideology = "Moderate";
         mod_score = mod_score + 1;
     }
-    else if (score == 2){
+    else if (score >= 1/3 && score <= 1){//from +1/3 to +1
         ideology = "Interventionist";
     }
     ideologies.push(ideology);
 })
 
 
-
 let econ_ideology = ideologies[0];
 let social_ideology = ideologies[1];
 let fp_ideology = ideologies[2];
 ideology = get_ideology(econ_ideology,social_ideology,fp_ideology);
-
 
 
 function get_ideology (econ_ideology, social_ideology, fp_ideology){

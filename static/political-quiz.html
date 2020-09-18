@@ -24,39 +24,75 @@
     </nav> 
     <div class="clr"></div>
     <div class="container">
-        <p class="text-center"><em>Scoring: This quiz calculates your ideology score on a scale from 0 (most libertarian) to 2 (most interventionist) in the categories of economics, social issues, and foreign policy. The scores in those three areas are then combined to find your overall ideology. Nontraditional answers may return an ideology of "Other".</em></p>
+        <p class="text-center"><em>Scoring: This quiz calculates your ideology score on a scale from -1 (most libertarian) to +1 (most interventionist) in the categories of economics, social issues, and foreign policy. The scores in those three areas are then combined to find your overall ideology. Nontraditional answers may return an ideology of "Other".</em></p>
     </div>
     <form action='/quiz' method='POST' id="quiz-form" class="form-bordered">
         <h1 class="text-center">Quiz</h1>
         <fieldset>
         <legend><h2 class="page-title-center">Economic Issues</h2></legend>
         <span class="badge badge-warning">Federal</span> Question 1: Should the mortgage interest deduction be eliminated from the tax code?<br>
-        <input type="radio" name="question1" value="1">No <br>
-        <input type="radio" name="question1" value="0">Yes <br>
-        <span class="badge badge-warning">State</span> Question 2: Should states relax scope of practice laws for nurse practitioners?<br>
-        <input type="radio" name="question2" value="0">Yes <br>
+        <input type="radio" name="question1" value="-1">Yes<br>
+        <input type="radio" name="question1" value="1">No<br>
+        <span class="badge badge-warning">Federal</span> Question 2: Should the State and Local Tax deduction (SALT) be eliminated from the tax code?<br>
+        <input type="radio" name="question7" value="-1">Yes<br>
+        <input type="radio" name="question7" value="1">No<br>
+        <span class="badge badge-warning">State</span> Question 3: Should states relax scope of practice laws for nurse practitioners?<br>
+        <input type="radio" name="question2" value="-1">Yes <br>
         <input type="radio" name="question2" value="1">No <br>
+        <span class="badge badge-warning">State</span> Question 4: Should states allow people without a degree from an accredited medical school to sit for the medical licensing exam?<br>
+        <input type="radio" name="question8" value="-1">Yes <br>
+        <input type="radio" name="question8" value="1">No <br>
+        <span class="badge badge-warning">State</span> Question 5: Should states require a license to practice medicine?<br>
+        <input type="radio" name="question9" value="1">Yes <br>
+        <input type="radio" name="question9" value="-1">No <br>
+        <span class="badge badge-warning">State</span> Question 6: Should states allow people without a degree from an accredited law school to sit for the Bar exam, also known as "reading law"?<br>
+        <input type="radio" name="question10" value="-1">Yes <br>
+        <input type="radio" name="question10" value="1">No <br>
+        <span class="badge badge-warning">State</span> Question 7: Do you support state funding of K-12 education, or so-called "public schools"?<br>
+        <input type="radio" name="question11" value="1">Yes <br>
+        <input type="radio" name="question11" value="-1">No <br>
+        <span class="badge badge-warning">State</span> Question 8: Do you support state funding of higher education, or so-called "public universities"?<br>
+        <input type="radio" name="question12" value="1">Yes <br>
+        <input type="radio" name="question12" value="-1">No <br>
+        <span class="badge badge-warning">State</span> Question 9: Should children be required by law to go to school?<br>
+        <input type="radio" name="question13" value="1">Yes <br>
+        <input type="radio" name="question13" value="-1">No <br>
+        <span class="badge badge-warning">Local</span> Question 10: Would you support a ban on single-family zoning?<br>
+        <input type="radio" name="question14" value="-1">Yes <br>
+        <input type="radio" name="question14" value="1">No <br>
         </fieldset>
 
         <fieldset>
             <legend><h2 class="page-title-center">Social Issues</h2></legend>
-            <span class="badge badge-warning">State</span> Question 3: Do you support legalizing recreational marijuana in your state? <br>
-            <input type="radio" name="question3" value="0">Yes <br>
+            <span class="badge badge-warning">State</span> Question 11: Do you support legalizing recreational marijuana in your state? <br>
+            <input type="radio" name="question3" value="-1">Yes <br>
             <input type="radio" name="question3" value="1">No <br>
-            <span class="badge badge-warning">State</span> Question 4: If SCOTUS had not ruled on gay marriage, would you support legalizing gay marriage in your state? <br>
-            <input type="radio" name="question4" value="0">Yes <br>
+            <span class="badge badge-warning">State</span> Question 12: If SCOTUS had not ruled on gay marriage, would you support legalizing gay marriage in your state? <br>
+            <input type="radio" name="question4" value="-1">Yes <br>
             <input type="radio" name="question4" value="1">No <br>
+            <span class="badge badge-warning">Local</span> Question 13: Should businesses need a license to sell alcohol?<br>
+            <input type="radio" name="question15" value="1">Yes <br>
+            <input type="radio" name="question15" value="-1">No <br>
+            <span class="badge badge-warning">State</span> Question 14: Would you support lowering the drinking and smoking age?<br>
+            <input type="radio" name="question16" value="-1">Yes <br>
+            <input type="radio" name="question16" value="1">No <br>
+            <span class="badge badge-warning">State</span> Question 15: Should prostitution be legal?<br>
+            <input type="radio" name="question17" value="-1">Yes <br>
+            <input type="radio" name="question17" value="1">No <br>
+            <span class="badge badge-warning">Federal</span> Question 16: Should racial discrimination by private businesses be legal?<br>
+            <input type="radio" name="question18" value="-1">Yes <br>
+            <input type="radio" name="question18" value="1">No <br>
             
         </fieldset>
 
         <fieldset>
             <legend><h2 class="page-title-center">Foreign Policy Issues</h2></legend>
-            <span class="badge badge-warning">Federal</span> Question 5: Should defense spending be increased or decreased? <br>
+            <span class="badge badge-warning">Federal</span> Question 17: Should defense spending be increased or decreased? <br>
             <input type="radio" name="question5" value="1">Increased <br>
-            <input type="radio" name="question5" value="0">Decreased <br>
-            <span class="badge badge-warning">Federal</span> Question 6: Should the US government support a coup in Venezuela? <br>
+            <input type="radio" name="question5" value="-1">Decreased <br>
+            <span class="badge badge-warning">Federal</span> Question 18: Should the US government support a coup in Venezuela? <br>
             <input type="radio" name="question6" value="1">Yes <br>
-            <input type="radio" name="question6" value="0">No <br>
+            <input type="radio" name="question6" value="-1">No <br>
             
         </fieldset>
 
