@@ -56,7 +56,7 @@ var fp_number_answered = 0;
 
 var i = 0;
 
-//FIXME Change every time the number of questions changes!
+//Remember to change i every time the number of questions changes!
 for (var question in body){
     if (i < 10 && typeof body[question] === 'string') { // < # of econ questions
         econ_score = econ_score + parseInt(body[question]);
@@ -70,7 +70,7 @@ for (var question in body){
         social_number_answered++;
     }
 
-    else if (i< 18 && typeof body[question] === 'string') { // < # of econ questions + # of social questions + # of fp questions 
+    else if (i< 21 && typeof body[question] === 'string') { // < # of econ questions + # of social questions + # of fp questions 
         fp_score = fp_score + parseInt(body[question]);
         i = i +1;
         fp_number_answered++; 
