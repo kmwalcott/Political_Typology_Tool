@@ -390,6 +390,26 @@ router.post('/search', (req,res) =>{
                             link3 = 'https://www.defenseone.com/ideas/2020/10/how-china-outsmarted-trump-administration/169125/';
                             link4 = '../articles/withdrawing-from-who.html';
                             break;
+                        case 'question29':
+                            photo_url = 'optimized-question29.jpg';
+                            title1 = "Trump's Leaked Immigration Rule Already Having Impacts";
+                            title2 = "Trump's New Immigration Rule Could Hurt Obamacare Markets";
+                            title3 = 'Immigration and Income Inequality';
+                            link1 = 'https://www.governing.com/topics/public-justice-safety/gov-leaked-immigration-trump-benefits.html';
+                            link2 = 'https://www.governing.com/topics/health-human-services/gov-trump-legal-immigration-obamacare-health.html';
+                            link3 = 'https://www.governing.com/columns/transportation-and-infrastructure/gov-immigration-income-inequality.html';
+                            link4 = '../articles/legal-immigration.html';
+                            break;
+                        case 'question30':
+                            photo_url = 'optimized-question2.jpg';
+                            title1 = "Single-Payer Health Care Would Cost California More Than Triple Its Budget";
+                            title2 = 'How States Can Begin Cutting the Costs of Health Care';
+                            title3 = 'Gov. Shumlin and the Push for Single-Payer Health Care';
+                            link1 = 'https://www.governing.com/topics/health-human-services/tns-california-single-payer-price.html';
+                            link2 = 'https://www.governing.com/gov-institute/voices/col-how-states-can-begin-cutting-health-care-costs.html';
+                            link3 = 'https://www.governing.com/columns/gov-shumlin-push-single-payer-healthcare.html';
+                            link4 = '../articles/government-funding-for-healthcare.html';
+                            break;
                         default:
                             photo_url = 'optimized-question2.jpg';
                     }
