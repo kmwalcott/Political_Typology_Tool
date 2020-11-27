@@ -4,7 +4,10 @@ block unique-content
     form(action="/auth/signout?_method=DELETE", method="POST", id="logout-form")
         input(type="submit" value="Sign Out" class="button")
     div.clr 
-    h2(class="page-title-center") Add a New Statement 
+    h2(class="page-title-center") Add a New Statement
+    br
+    h3(class="page-title-center") 
+        em Remember, do not upload copywrited material for which you don't have the rights!  
     form(action="/posts", method="POST", class="form-centered", class="form-bordered")
         label(for="politician") Politician's Name: 
         input(type="text" name="politician" id="politician" required)
